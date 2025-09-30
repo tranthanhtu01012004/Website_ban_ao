@@ -1,0 +1,184 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    @Styles.Render("~/bundles/css1")
+    @Styles.Render("~/bundles/css")
+    <!-- Additional CSS Files -->
+    <link rel="shortcut icon" href="favicon.png">
+
+</head>
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/Home/Index" class="logo">
+                            <img src="~/Materials/Images/Logo1.png" />
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section">@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                            <li class="scroll-to-section"><a href="#men">Áo Thun</a></li>
+                            <li class="scroll-to-section"><a href="#women">Áo Sơ Mi</a></li>
+                            <li class="scroll-to-section"><a href="#kids">Áo Hoodie</a></li>
+
+                            <li class="submenu">
+                                <a href="javascript:;">Trang</a>
+                                <ul>
+                                    <li>
+                                        @Html.ActionLink("Sản phẩm", "Index", "Products")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Về chúng tôi", "Index", "Aboout")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Liên hệ", "Index", "Contact")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                @Html.ActionLink("Giỏ hàng", "Index", "Single_products")
+                            </li>
+                            <li class="scroll-to-section">@Html.ActionLink("Đăng nhập", "Index", "Login")</li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    @RenderBody()
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="~/Materials/Images/Logo1.png" alt="hexashop ecommerce templatemo">
+                        </div>
+                        <ul>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">010-020-0340</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Men’s Shopping</a></li>
+                        <li><a href="#">Women’s Shopping</a></li>
+                        <li><a href="#">Kid's Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>
+                            Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
+
+                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer End ***** -->
+    @Scripts.Render("~/bundles/moder")
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Plugins -->
+    <script src="~/Scripts/owl-carousel.js"></script>
+    <script src="~/Scripts/accordions.js"></script>
+    <script src="~/Scripts/datepicker.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.counterup.min.js"></script>
+    <script src="~/Scripts/imgfix.min.js"></script>
+    <script src="~/Scripts/slick.js"></script>
+    <script src="~/Scripts/lightbox.js"></script>
+    <script src="~/Scripts/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="~/Scripts/custom.js"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+    @Scripts.Render("~/bundles/script2")
+</body>
+</html>

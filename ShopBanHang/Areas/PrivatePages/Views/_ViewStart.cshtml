@@ -1,0 +1,10 @@
+﻿@using ShopBanHang.Models;
+
+@{
+    TaiKhoan s = (TaiKhoan)Session["TtDangNhap"];
+    if (s == null)
+    {
+        Response.Redirect("~/Login");
+    }
+    Layout = "~/Areas/PrivatePages/Views/Shared/_Layout.cshtml";
+}

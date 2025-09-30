@@ -1,0 +1,72 @@
+﻿
+@using ShopBanHang.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    San_Pham a = ViewData["SpCanXem"] as San_Pham;
+
+
+}
+
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Sản phẩm </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Products Area Starts ***** -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Sản phẩm mới nhất</h2>
+                    <span>Tất cả sản phẩm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (San_Pham i in Common.getProduct())
+            {
+                <div class="col-lg-4">
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a href="@Url.Action("Details","Products",new  {id = i.maSP})"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img src="@i.hinhDD" alt="">
+                        </div>
+                        <div class="down-content">
+                            <h4> @i.tenSP</h4>
+
+                            <span>
+                                @String.Format("{0:#, ##0 Đồng}", i.giaBan)
+                            </span>
+                            @using (Html.BeginForm("AddToCart", "Products", FormMethod.Post))
+                            {
+                                <input name="maSP" type="hidden" value="@i.maSP" />
+                                <button class="btn btn-primary"> Chọn mua</button>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- ***** Products Area Ends ***** -->

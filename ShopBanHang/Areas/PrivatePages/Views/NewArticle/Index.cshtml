@@ -1,0 +1,69 @@
+﻿@model ShopBanHang.Models.NewArtile
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-8">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Thông tin chính</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                @using (Html.BeginForm( FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.Label("Tên bài viết", new { @for = "exampleInputEmail1" })
+                @Html.TextBox("Tên bài viết", "", new { @class = "form-control" })
+            </div>
+                    <div class="form-group">
+                        @Html.Label("Nội dung tóm tắt", new { @for = "ndtt" })
+                        @Html.TextArea("Nội dung tóm tắt", "", new { @class = "form-control" })
+                    </div>
+                    <div class="form-check">
+                        @Html.CheckBox("isNewlyEnrolled", false)
+                        @Html.Label("Kiểm duyệt bài viết", new { @for = "exampleCheck1" })
+                    </div>
+
+                }
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- right column -->
+        <div class="col-md-4">
+            <!-- general form elements disabled -->
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">General Elements</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <img src="~/Materials/Images/AdminLTELogo.png">
+                <label for="exampleInputFile">File input</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+

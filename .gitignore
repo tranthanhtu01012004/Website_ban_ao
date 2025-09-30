@@ -1,0 +1,13 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+bin/
+obj/
+# Node/JS (nếu có)
+node_modules/
+dist/
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+.vs/

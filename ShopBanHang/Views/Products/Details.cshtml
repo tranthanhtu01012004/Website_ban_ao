@@ -1,0 +1,33 @@
+﻿@using ShopBanHang.Models
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    San_Pham i = ViewData["SpCanXem"] as San_Pham;
+
+}
+         
+
+            
+            {<!-- Assuming "Products" is a collection of products passed to the view -->
+                <div class="product-item">
+                    <!-- Display product information -->
+                    <h4>@i.tenSP</h4>
+                    <p>@i.noiDung</p>
+                    <!-- Create links for product actions -->
+                    <div class="hover-content">
+                        <ul>
+                            <img src=" @i.hinhDD" />
+                            <li><i class="fa fa-eye"></i></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span>
+                            @String.Format("{0:#, ##0 Đồng}", i.giaBan)
+                        </span>
+                        @using (Html.BeginForm("AddToCart", "Products", FormMethod.Post))
+                        {
+                            <input name="maSP" type="hidden" value="@i.maSP" />
+                            <button class="btn btn-primary"> Chọn mua</button>
+                        }
+                    </div>
+                </div>
+            }s
