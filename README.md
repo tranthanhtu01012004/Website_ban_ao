@@ -1,1 +1,1 @@
-# Website_ban_ao
+“Website bán áo” được thiết kế theo mô hình MVC, tách biệt phần giao diện, xử lý và dữ liệu. Hệ thống phát triển các chức năng: quản lý danh mục, chi tiết sản phẩm, giỏ hàng, đặt hàng và CRUD sản phẩm. Kết nối, quản lý cơ sở dữ liệu sản phẩm bằng SQL Server, đồng thời tối ưu giao diện để thân thiện và dễ sử dụng cho khách hàng.
